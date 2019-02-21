@@ -17,7 +17,7 @@ class SocialAuthFacebookController extends Controller
      */
     public function redirect()
     {
-        return Socialite::driver('facebook')->scopes(['ads_management','email'])->redirect();
+        return Socialite::driver('facebook')->scopes(['ads_management'])->redirect();
     }
 
     /**
@@ -28,7 +28,7 @@ class SocialAuthFacebookController extends Controller
     public function callback(Request $request)
     {
 
-        $user = Socialite::driver('facebook')->user();
+        $user = Socialite::with('facebook')->user();
 //        ->scopes(['ads_management','email'])
          session(['token' => $user->token]);
 
