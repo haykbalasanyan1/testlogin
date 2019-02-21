@@ -28,8 +28,8 @@ class SocialAuthFacebookController extends Controller
     public function callback(Request $request)
     {
 
-        $user = Socialite::driver('facebook')->user();
-//        ->scopes(['ads_management','email'])
+        $user = Socialite::driver('facebook')->scopes(['ads_management','email'])->user();
+
          session(['token' => $user->token]);
 
 
