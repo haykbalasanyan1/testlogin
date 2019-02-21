@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        {{dd(Route::currentRouteName())}}
+
                     @if($ads)
                             @foreach($ads as $ad)
                                    {{$ad}} AAAAAA
